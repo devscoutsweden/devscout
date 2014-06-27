@@ -34,8 +34,11 @@ static ssize_t device_read(struct file *file,
                        size_t length,
                        loff_t *offset)
 {
+        char * fair_dice_roll;
         long ret;
-        ret = copy_to_user(buffer, "4\n", 2);
+
+        fair_dice_roll = "4\n"; /* Guaranteed to be random */
+        ret = copy_to_user(buffer, fair_dice_roll, 2);
 
         if (*offset == 0) {
                 *offset += 1;
@@ -57,7 +60,7 @@ static struct miscdevice scout_dev = {
         .minor = MISC_DYNAMIC_MINOR,
         .name = DEVICE_NAME,
         .fops = &fops,
-        .mode = S_IRUGO
+        .mode = S_IRUGO /* read-only device */
 };
 
 static int scout_init(void)
