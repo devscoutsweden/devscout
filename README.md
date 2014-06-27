@@ -6,9 +6,9 @@ This is probably not interesting unless you already know what
 # Usage
 
 - You'll need generic build essentials for Linux (and ofc, you need to run 
-Linux). You can install build essentials on Ubuntu using 
-`# apt-get install build-essentials` or on Fedora using
-`# yum install make automake gcc gcc-c++ kernel-devel`
+Linux). You can install build essentials on Ubuntu/Debian using 
+`# apt-get install build-essentials` or on Fedora/RHEL/CentOS using
+`# yum install make automake gcc gcc-c++ kernel-devel` (assuming yum is installed)
 
 You _should_ be able to compile the kernel module by simply run `make`, if not,
 please troubleshoot or file an issue on GitHub.
